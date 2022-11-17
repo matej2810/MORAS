@@ -1,0 +1,23 @@
+CHIP MultHelper{
+    IN a, k[16];
+    OUT out[16];
+
+    // mnozi ili 0 ili 1 s tim cijelim brojem
+    PARTS:
+    And(a=a, b=k[0], out=out[0]);
+    And(a=a, b=k[1], out=out[1]);
+    And(a=a, b=k[2], out=out[2]);
+    And(a=a, b=k[3], out=out[3]);
+    And(a=a, b=k[4], out=out[4]);
+    And(a=a, b=k[5], out=out[5]);
+    And(a=a, b=k[6], out=out[6]);
+    And(a=a, b=k[7], out=out[7]);
+    And(a=a, b=k[8], out=out[8]);
+    And(a=a, b=k[9], out=out[9]);
+    And(a=a, b=k[10], out=out[10]);
+    And(a=a, b=k[11], out=out[11]);
+    And(a=a, b=k[12], out=out[12]);
+    And(a=a, b=k[13], out=out[13]);
+    And(a=a, b=k[14], out=out[14]);
+    And(a=a, b=k[15], out=out[15]);
+}

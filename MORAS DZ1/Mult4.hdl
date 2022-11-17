@@ -1,0 +1,8 @@
+CHIP Mult4 {
+    IN in[16];
+    OUT out[16];
+
+    PARTS:
+    Add16 (a = in,b = in, out= inPlusin);
+    Add16 (a = inPlusin, b = inPlusin, out = out);
+}

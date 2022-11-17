@@ -1,0 +1,10 @@
+CHIP MultOne {
+    IN in[16];
+    OUT out[16];
+
+    Add16 (a = in,b = in, out= out1);
+    Add16 (a = out1, b = out1, out = out2);
+    Add16 (a = out2, b = out2, out = out)
+
+
+}

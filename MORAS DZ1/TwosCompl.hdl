@@ -1,0 +1,10 @@
+CHIP TwosCompl {
+    IN in[16];
+    OUT out[16];
+    // 0 <- 1 && 1 <- 0
+    Not16(in = in, out = new);
+
+    // add 1 to new
+    Inc16(in = new, out = out);
+    
+}

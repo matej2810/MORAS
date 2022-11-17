@@ -1,0 +1,10 @@
+CHIP zd1b {
+    IN x, y, z;
+    OUT out;
+
+    PARTS:
+    Not (in = y, out = ny);
+    Not (in = z, out = nz);
+    And (a = x, b = ny, out = xAndny);
+    And (a = xAndny, b = nz, out = out);
+}
