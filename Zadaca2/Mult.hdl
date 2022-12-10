@@ -1,0 +1,69 @@
+CHIP Mult{
+    IN a[16], b[16];
+    OUT out[16];
+
+    PARTS:
+    MultHelper(a=b[0], k=a, out=res1);
+    BitShiftL(in=a, out=bitshift1);
+
+    MultHelper(a=b[1], k=bitshift1, out=res2);
+    BitShiftL(in=bitshift1, out=bitshift2);
+
+    MultHelper(a=b[2], k=bitshift2, out=res3);
+    BitShiftL(in=bitshift2, out=bitshift3);
+
+    MultHelper(a=b[3], k=bitshift3, out=res4);
+    BitShiftL(in=bitshift3, out=bitshift4);
+
+    MultHelper(a=b[4], k=bitshift4, out=res5);
+    BitShiftL(in=bitshift4, out=bitshift5);
+
+    MultHelper(a=b[5], k=bitshift5, out=res6);
+    BitShiftL(in=bitshift5, out=bitshift6);
+
+    MultHelper(a=b[6], k=bitshift6, out=res7);
+    BitShiftL(in=bitshift6, out=bitshift7);
+
+    MultHelper(a=b[7], k=bitshift7, out=res8);
+    BitShiftL(in=bitshift7, out=bitshift8);
+
+    MultHelper(a=b[8], k=bitshift8, out=res9);
+    BitShiftL(in=bitshift8, out=bitshift9);
+
+    MultHelper(a=b[9], k=bitshift9, out=res10);
+    BitShiftL(in=bitshift9, out=bitshift10);
+
+    MultHelper(a=b[10], k=bitshift10, out=res11);
+    BitShiftL(in=bitshift10, out=bitshift11);
+
+    MultHelper(a=b[11], k=bitshift11, out=res12);
+    BitShiftL(in=bitshift11, out=bitshift12);
+
+    MultHelper(a=b[12], k=bitshift12, out=res13);
+    BitShiftL(in=bitshift12, out=bitshift13);
+
+    MultHelper(a=b[13], k=bitshift13, out=res14);
+    BitShiftL(in=bitshift13, out=bitshift14);
+
+    MultHelper(a=b[14], k=bitshift14, out=res15);
+    BitShiftL(in=bitshift14, out=bitshift15);
+
+    MultHelper(a=b[15], k=bitshift15, out=res16);
+
+
+    Add16(a=res1, b=res2, out=r1);
+    Add16(a=r1, b=res3, out=r2);
+    Add16(a=r2, b=res4, out=r3);
+    Add16(a=r3, b=res5, out=r4);
+    Add16(a=r4, b=res6, out=r5);
+    Add16(a=r5, b=res7, out=r6);
+    Add16(a=r6, b=res8, out=r7);
+    Add16(a=r7, b=res9, out=r8);
+    Add16(a=r8, b=res10, out=r9);
+    Add16(a=r9, b=res11, out=r10);
+    Add16(a=r10, b=res12, out=r11);
+    Add16(a=r11, b=res13, out=r12);
+    Add16(a=r12, b=res14, out=r13);
+    Add16(a=r13, b=res15, out=r14);
+    Add16(a=r14, b=res16, out=out);
+}
