@@ -16,14 +16,13 @@ def _parse_symbols(self):
 # izbrisana iz nje. Koristimo dictionary _labels.
 def _parse_labels(self, line, p, o):
     if line[0] == "(":
-        #zd1
-        #---------------------------------------------------------------------
+        #ZADATAK 1
         var = line[1:].split(")")
         if(len(var) > 1 and var[1] != ""):
             self._line = o
             self._flag = False
             self._errm = "Forbidden text"
-        #---------------------------------------------------------------------
+        #kraj zadatka
         label = line[1:].split(")")[0]
         if len(label) == 0:
             self._flag = False
