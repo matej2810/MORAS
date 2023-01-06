@@ -1,117 +1,108 @@
-(LOOP)
-@0
-D=M
-
-@LOOPEND
-D;JEQ
-
 @100
-D = D-1
-D = A + D
-A = D
-D = M
+D = A
 
-@i
+@A
 M = D
 
+@B
+M = D + 1 
+
 @0
-D = M
+D = M - 1
 
-@1
-M=D-1
+@temp
+M = D
 
-@i
-D=M
+@temp2
+M = D
 
-@x
-M=D
-@0
-D=M
-@max
-M=D
 
-(INNER)
-@1
-D=M
-	
-@INNEREND
-D;JEQ
-	
-@100
-D = D-1
-D = A + D
-A = D
-D = M
-
-@n
-M=D
-	
-@x
-D = M-D
-	
-@DNS
-D;JGT
-	
-@n
-D=M
-	
-@x
-M=D
-@1
-D=M
-@max
-M=D
-(DNS)
-@1
-M=M-1
-
-@INNER
+@END_SWAP
 0;JMP
+(SWAP)
 
-(INNEREND)
-	
-@0
-D=M
+$SWP(swapA,swapB)
 
-@100
-D=A
+@swapA
+D = M
 
-@0
-D=D+M
-
-@temp
-M=D-1
-
-@x
-D=M
-
-@temp
+@A
 A = M
 M = D
 
-@100
-D=A
+@swapB
+D = M
 
-@max
-D=D+M
-
-@temp
-M=D-1
-
-@i
-D=M
-
-@temp
+@B
 A = M
 M = D
 
-@0
-M = M-1
-
-@LOOP
+@HELP_LOOP
 0;JMP
 
-(LOOPEND)
+(END_SWAP)
+
+@0
+M = M - 1 
+D = M
+
+$WHILE(temp)
+
+@temp
+M = M - 1
+
+$WHILE(0)
+
+    @R0
+    M = M - 1
+
+    @A
+    A = M
+    D = M
+
+    @swapA
+    M = D
+
+    @B
+    A = M
+    D = M
+
+    @swapB
+    M = D
+
+    @swapA
+    D = M
+    @swapB
+    D = D - M
+
+    @SWAP
+    D;JGT
+
+    (HELP_LOOP)
+    @A
+    M = M + 1
+
+    @B
+    M = M + 1
+
+$END
+
+@100
+D = A
+
+@A
+M = D
+
+@B
+M = D + 1 
+
+@temp2
+D = M
+
+@0
+M = D
+
+$END
 (END)
 @END
 0;JMP
