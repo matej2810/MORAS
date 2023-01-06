@@ -1,74 +1,52 @@
-@1
+@R0
 D = M
-@e
-M = D
-@SKIP
-D;JGT
-@2
-M=1
 
-@END
-0;JMP
-
-(SKIP)
-@0
-D = M
-@i
+@baza
 M = D
 
-@SKIP1
-D-1;JGT
-@2
-M=1
-
-@END
-0;JMP
-
-(SKIP1)
-@2
-M = D
-@j
+@temp
 M = D
 
-(OUTER_START)
-@e
-D = M
+@temp2
+M = 0
 
-@OUTER_END
-D-1;JEQ
-
-(LOOP_START)
-@i
-D = M
-
-@LOOP_END
-D-1;JEQ
-@j
-D = M
-@2
-M = M + D
-@i
+@R1
 M = M - 1
 
-@LOOP_START
-0;JMP
+$WHILE(R1)
 
-(LOOP_END)
+@R1
+M = M - 1
+
+$WHILE(R0)
+@R0
+M = M - 1
+$SUM(temp2, temp, temp2)
+$END
+
+@temp2
+D = M
+
+@temp
+M = D
+
+@temp2
+M = 0
+
+@baza
+D = M
+
+@R0
+M = D
+
+$END
+
+@temp
+D = M
+
 @2
-D = M
-@j
 M = D
-@0
-D = M
-@i
-M = D
-@e
-M = M-1
 
-@OUTER_START
-0;JMP
-
-(OUTER_END)
 (END)
 @END
 0;JMP
