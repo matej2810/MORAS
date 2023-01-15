@@ -294,7 +294,8 @@ def main():
     P.parseFile("main")
     P.parseFile("mid")
     P.parseFile("fib")
-    P.parseFile("divmod")
+    P.parseFile("div")
+    P.parseFile("mod")
     P.parseFile("bs")
     P.writeFile("test")
 
