@@ -1,0 +1,68 @@
+function BS 3
+    push constant 0
+    pop local 0
+    push argument 1
+    push constant 1
+    sub
+    pop local 1
+    
+    label WHILE
+    
+    
+    push local 0
+    push local 1
+    gt
+    if-goto NOT_FOUND
+    
+    push local 0
+    push local 1
+    add
+    push constant 2
+    call divmod.Div 2
+    pop local 2
+    
+    
+    push argument 0
+    push local 2
+    add
+    pop pointer 1
+    push that 0
+    push argument 2
+    eq
+    if-goto RET
+    
+    
+    push argument 0
+    push local 2
+    add
+    pop pointer 1
+    push that 0
+    push argument 2
+    gt
+    if-goto HIGH
+    goto LOW
+    
+    label HIGH
+    push local 2
+    push constant 1
+    sub 
+    pop local 1
+    goto WHILE
+    
+    label LOW
+    push local 2
+    push constant 1
+    add 
+    pop local 0
+    goto WHILE
+    
+    label RET
+    push local 2
+    return
+    
+    
+    label NOT_FOUND
+    push constant 1
+    neg
+    return
+      

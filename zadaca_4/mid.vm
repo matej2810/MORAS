@@ -1,0 +1,43 @@
+function Mid 3
+    push argument 0
+    push argument 1
+    gt
+    if-goto AGTB
+    push argument 1
+    push argument 2
+    gt
+    if-goto BGTC
+    push argument 1
+    return
+    
+    label AGTB
+    push argument 0
+    push argument 2
+    gt
+    if-goto AGTC
+    push argument 0
+    return
+    
+    label BGTC
+    push argument 0
+    push argument 2
+    gt
+    if-goto RETA
+    push argument 2
+    return
+    
+    label AGTC
+    push argument 1
+    push argument 2
+    gt
+    if-goto RETB
+    push argument 2
+    return 
+    
+    label RETA
+    push argument 0
+    return
+    
+    label RETB
+    push argument 1
+    return

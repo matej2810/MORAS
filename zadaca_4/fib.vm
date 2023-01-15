@@ -1,0 +1,23 @@
+function Fib 1
+    push argument 0
+    push constant 2
+    lt
+    if-goto TRUE
+    goto FALSE
+    
+    label TRUE          
+    push argument 0        
+    return
+    
+    label FALSE         
+    push argument 0
+    push constant 2
+    sub
+    call fib.Fib 1 
+    
+    push argument 0
+    push constant 1
+    sub
+    call fib.Fib 1  
+    add                    
+    return
