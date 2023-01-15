@@ -1,0 +1,64 @@
+function Search 3
+push constant 0
+pop local 0
+
+push argument 1
+push constant 1
+sub
+pop local 1 
+
+label while
+
+push local 0 
+push local 1 
+gt
+if-goto kraj
+
+push local 0
+push local 1 
+add
+push constant 2 
+call div.Div 2
+pop local 2
+
+push local 2 
+push argument 0
+add
+pop pointer 1
+push that 0
+push argument 2
+eq
+if-goto pronaden
+
+push local 2 
+push argument 0
+add
+pop pointer 1
+push that 0
+push argument 2
+gt
+if-goto veci
+goto manji
+
+label kraj
+push constant 1 
+neg
+return
+
+label pronaden
+push local 2 
+return
+
+label veci
+push local 2
+push constant 1 
+sub 
+pop local 1
+goto while 
+
+label manji
+push local 2
+push constant 1 
+add 
+pop local 0
+goto while 

@@ -1,0 +1,45 @@
+function Mid 3
+    push argument 0
+    push argument 1
+    gt
+
+    if-goto x_veci_y
+    push argument 1
+    push argument 2
+    gt
+
+    if-goto y_veci_z
+    push argument 1
+    return 
+
+label x_veci_y
+    push argument 0
+    push argument 2
+    gt
+    if-goto x_gt_z
+    push argument 0
+    return 
+
+label x_veci_z
+    push argument 1
+    push argument 2
+    gt
+    if-goto veci_y
+    push argument 2
+    return 
+
+label y_veci_z
+    push argument 0
+    push argument 2
+    gt
+    if-goto veci_x
+    push argument 2
+    return 
+
+label veci_y
+    push argument 1
+    return 
+
+label veci_x
+    push argument 0
+    return 
