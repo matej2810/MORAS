@@ -1,0 +1,33 @@
+class Main {
+	
+  function void main() {
+
+    var Array array; 
+    var int length;
+    var int k;
+    let length = Keyboard.readInt("Koliko brojeva unosis? ");
+    let array = Array.new(length);
+    let k = 0;
+
+    while (k < length) {
+
+        let array[k] = Keyboard.readInt("Unesi broj:");
+            let k = k+1;
+
+     }
+    do QuickSort.sort(array, 0, length-1);
+    let k = 0;
+
+    while (k < length) {
+
+            do Output.printInt(array[k]);
+            do Output.printString(" ");
+            let k = k+1;
+
+    }
+  
+    return;
+
+}
+
+}
