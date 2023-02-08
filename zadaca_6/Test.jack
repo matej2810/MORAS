@@ -19,7 +19,7 @@ class Square
         let A[d-b] = c - (4 + a);
         let A[a + (d*2)] = 1;
         
-		do Output.printString("debil");
+		do Output.printString("out");
         
         //return a;
         //return A[3];
